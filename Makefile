@@ -18,8 +18,10 @@ CFLAGS = -Wall -Wextra -Werror -g3
 AR = ar rcs
 
 SRC = 	ft_printf.c \
-		ft_putnbr_fd.c \
-		ft_putstr_fd.c  
+		ft_putnbr.c \
+		ft_putunbr.c \
+		ft_putstr.c \
+		ft_putchar.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -31,11 +33,15 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+test: re
+	$(CC) main.c libftprintf.a -o test
+	rm -f $(OBJ) libftprintf.a
+
 clean:
 	rm -f $(OBJ)
 
-fclean: clean
-	rm -f $(NAME) libftprintf.so
+fclean: clean 
+	rm -f $(NAME) libftprintf.so test
 
 re: fclean all
 

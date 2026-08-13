@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldubok <ldubok@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/11 14:09:35 by ldubok            #+#    #+#             */
-/*   Updated: 2026/08/13 12:10:21 by ldubok           ###   ########.fr       */
+/*   Created: 2026/07/23 16:28:32 by ldubok            #+#    #+#             */
+/*   Updated: 2026/08/12 19:45:50 by ldubok           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
-int	ft_printf (const char *, ...);
-int	ft_parse_format (char, va_list *);
-int	ft_putchar (char);
-int	ft_putstr (char *);
-int	ft_putnbr (int);
-int	ft_putunbr (unsigned int);
-int ft_puthexa (unsigned long, char);
+int	ft_putstr(char *s)
+{
+	int	len;
 
+	len = 0;
+	if (!s)
+		return ft_putstr("(null)");
+	while (*s)
+	{
+		len += ft_putchar(*s);
+		s++;
+	}
+	return (len);
+}

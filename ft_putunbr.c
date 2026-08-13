@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldubok <ldubok@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/11 14:09:35 by ldubok            #+#    #+#             */
-/*   Updated: 2026/08/13 12:10:21 by ldubok           ###   ########.fr       */
+/*   Created: 2026/08/12 21:03:24 by ldubok            #+#    #+#             */
+/*   Updated: 2026/08/12 21:08:49 by ldubok           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <unistd.h>
 
-int	ft_printf (const char *, ...);
-int	ft_parse_format (char, va_list *);
-int	ft_putchar (char);
-int	ft_putstr (char *);
-int	ft_putnbr (int);
-int	ft_putunbr (unsigned int);
-int ft_puthexa (unsigned long, char);
+#include "ft_printf.h"
 
+int	ft_putunbr(unsigned int n)
+{
+	int	len;
+
+	len = 0;
+	if (n / 10)
+		len += ft_putnbr(n / 10);
+	len += ft_putchar(n % 10 + '0');
+	return (len);
+}

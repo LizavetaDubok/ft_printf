@@ -6,14 +6,14 @@
 /*   By: ldubok <ldubok@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 12:15:31 by ldubok            #+#    #+#             */
-/*   Updated: 2026/08/13 13:12:51 by ldubok           ###   ########.fr       */
+/*   Updated: 2026/08/13 13:34:27 by ldubok           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "ft_printf.h"
 
-int	ft_puthexa(unsigned long n, char mode)
+int	ft_puthexa(unsigned int n, char mode)
 {
 	int		len;
 	int		base;

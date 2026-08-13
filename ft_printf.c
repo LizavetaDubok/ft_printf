@@ -6,7 +6,7 @@
 /*   By: ldubok <ldubok@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 15:01:37 by ldubok            #+#    #+#             */
-/*   Updated: 2026/08/13 13:13:06 by ldubok           ###   ########.fr       */
+/*   Updated: 2026/08/13 13:34:44 by ldubok           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int	ft_parse_format (char format, va_list *args)
 	if (format == 's')
 		return (ft_putstr(va_arg(*args, char *)));
 	if (format == 'x')
-		return (ft_puthexa(va_arg(*args, unsigned long), 'x'));
+		return (ft_puthexa(va_arg(*args, unsigned int), 'x'));
 	if (format == 'X')
-		return (ft_puthexa(va_arg(*args, unsigned long), 'X'));
+		return (ft_puthexa(va_arg(*args, unsigned int), 'X'));
 	if (format == 'p')
 		return (ft_putptr(va_arg(*args, void *)));
 	if (format == '%')

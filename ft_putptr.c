@@ -6,12 +6,11 @@
 /*   By: ldubok <ldubok@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 12:25:18 by ldubok            #+#    #+#             */
-/*   Updated: 2026/08/13 13:25:42 by ldubok           ###   ########.fr       */
+/*   Updated: 2026/08/13 13:49:57 by ldubok           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 int	ft_puthexa_long(unsigned long n)
 {

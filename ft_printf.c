@@ -6,13 +6,13 @@
 /*   By: ldubok <ldubok@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 15:01:37 by ldubok            #+#    #+#             */
-/*   Updated: 2026/08/13 13:34:44 by ldubok           ###   ########.fr       */
+/*   Updated: 2026/08/13 13:50:35 by ldubok           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_parse_format (char format, va_list *args)
+int	ft_parse_format(char format, va_list *args)
 {
 	if (format == 'c')
 		return (ft_putchar((char)va_arg(*args, int)));
@@ -33,12 +33,12 @@ int	ft_parse_format (char format, va_list *args)
 	return (0);
 }
 
-int	ft_printf (const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	args;
 	int		i;
 	int		len;
-	
+
 	i = 0;
 	len = 0;
 	va_start(args, str);

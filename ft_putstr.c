@@ -6,7 +6,7 @@
 /*   By: ldubok <ldubok@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 16:28:32 by ldubok            #+#    #+#             */
-/*   Updated: 2026/08/12 19:45:50 by ldubok           ###   ########.fr       */
+/*   Updated: 2026/08/13 13:49:23 by ldubok           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_putstr(char *s)
 
 	len = 0;
 	if (!s)
-		return ft_putstr("(null)");
+		return (ft_putstr("(null)"));
 	while (*s)
 	{
 		len += ft_putchar(*s);

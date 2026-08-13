@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_puthexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldubok <ldubok@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/11 14:09:35 by ldubok            #+#    #+#             */
-/*   Updated: 2026/08/13 13:12:55 by ldubok           ###   ########.fr       */
+/*   Created: 2026/08/13 12:15:31 by ldubok            #+#    #+#             */
+/*   Updated: 2026/08/13 13:12:51 by ldubok           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <limits.h>
 
+#include "ft_printf.h"
 
-int	ft_printf (const char *, ...);
-int	ft_parse_format (char, va_list *);
-int	ft_putchar (char);
-int	ft_putstr (char *);
-int	ft_putnbr (int);
-int	ft_putunbr (unsigned int);
-int ft_puthexa (unsigned long, char);
-int ft_putptr (void *);
+int	ft_puthexa(unsigned long n, char mode)
+{
+	int		len;
+	int		base;
+	char	*digits;
 
+	len = 0;
+	base = 16;
+	if (mode == 'x')
+		digits = "0123456789abcdef";
+	else
+		digits = "0123456789ABCDEF";
+	if (n / base)
+		len += ft_puthexa(n / base, mode);
+	len += ft_putchar(digits[n % base]);
+	return (len);
+}

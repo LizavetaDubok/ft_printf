@@ -22,6 +22,8 @@ SRC = 	ft_printf.c \
 		ft_putunbr.c \
 		ft_putstr.c \
 		ft_putchar.c \
+		ft_puthexa.c \
+		ft_putptr.c 
 
 OBJ = $(SRC:.c=.o)
 

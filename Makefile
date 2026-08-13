@@ -35,10 +35,6 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-test: re
-	$(CC) main.c libftprintf.a -o test
-	rm -f $(OBJ) libftprintf.a
-
 clean:
 	rm -f $(OBJ)
 
